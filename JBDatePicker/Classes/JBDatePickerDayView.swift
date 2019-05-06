@@ -151,7 +151,7 @@ public final class JBDatePickerDayView: UIView {
         let fontToUse: UIFont
         switch preferredFont.fontName.isEmpty {
         case true:
-            fontToUse = UIFont.systemFont(ofSize: sizeOfFont, weight: UIFont.Weight.regular)
+            fontToUse = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium)
         case false:
             if let customFont = UIFont(name: preferredFont.fontName, size: sizeOfFont) {
                 fontToUse = customFont
@@ -162,7 +162,7 @@ public final class JBDatePickerDayView: UIView {
             }
         }
         
-        textLabel.attributedText = NSMutableAttributedString(string: String(dayInfo.dayValue), attributes:[NSAttributedStringKey.font: fontToUse])
+        textLabel.attributedText = NSMutableAttributedString(string: String(dayInfo.dayValue), attributes:[NSAttributedString.Key.font: fontToUse])
         
     }
     

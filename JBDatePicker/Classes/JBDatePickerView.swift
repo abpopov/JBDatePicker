@@ -133,6 +133,33 @@ extension JBDatePickerView {
         return dateFormatter.string(from: date)
     }
     
+    func monthStringForDate(_ date: Date) -> String {
+        
+        let monthFormatString = "MMMM"
+        dateFormatter.dateFormat = monthFormatString
+        if let preferredLanguage = Bundle.main.preferredLocalizations.first {
+            if delegate?.shouldLocalize == true {
+                dateFormatter.locale = Locale(identifier: preferredLanguage)
+            }
+        }
+        
+        return dateFormatter.string(from: date)
+    }
+    
+    func yearStringForDate(_ date: Date) -> String {
+        
+        let monthFormatString = "yyyy"
+        dateFormatter.dateFormat = monthFormatString
+        if let preferredLanguage = Bundle.main.preferredLocalizations.first {
+            if delegate?.shouldLocalize == true {
+                dateFormatter.locale = Locale(identifier: preferredLanguage)
+            }
+        }
+        
+        return dateFormatter.string(from: date)
+    }
+    
+    
     func dateIsSelectable(date: Date?) -> Bool {
 
         //default true, pass check to delegate if exists
